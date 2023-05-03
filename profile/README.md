@@ -11,3 +11,14 @@ CloudKoala is a cloud computing management platform that helps businesses identi
 - **CLI**: Our command-line interface (CLI) provides a convenient way to manage your cloud resources from the terminal. You can use it to automate tasks, check the status of your resources, and configure settings. Our CLI supports all major cloud providers, including AWS, Azure, GCP, Linode, Digital Ocean, and Heroku.
 
 - **API Documentation**: Our API documentation provides detailed information about how to use our API, including sample code, API reference, and guides. You can use our documentation to get started with our API quickly and easily.
+
+```mermaid
+graph TD;
+    callAPI{Call CloudKoala API} --> checkcloud[Check Cloud Providers];
+    GCP-->callAPI;
+    Azure-->callAPI;
+    Linode-->callAPI;
+    DigitalOcean-->callAPI;
+    Heroku-->callAPI;
+    checkcloud-->|Retrieve pricing data|return[Make Decision];
+    return-->spin(Spin up Best Priced Cloud);
